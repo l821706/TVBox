@@ -26,6 +26,25 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1
+      },
+        {
+            "key": "瓜子影视",
+            "name": "🍉┃瓜子┃影视",
+            "type": 3,
+            "api": "csp_Guazi",
+            "searchable": 1,
+            "quickSearch": 0,
+            "changeable": 1
+        },
+        {
+            "key": "旺旺影视",
+            "name": "🐶┃旺旺┃影视",
+            "type": 3,
+            "api": "csp_Wwys",
+            "searchable": 1,
+            "filterable": 1,
+            "changeable": 1,
+            "timeout": 30
     }
   ],
   "lives": [
