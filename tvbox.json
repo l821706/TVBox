@@ -28,10 +28,10 @@
       "filterable": 1
     },
     {
-      "key": "ck",
-      "name": "ck",
-      "type": 1,
-      "api": "https://ckzy.me/api.php/provide/vod/?ac=list",
+      "key": "金鹰",
+      "name": "金鹰",
+      "type": 0,
+      "api": "https://jyzyapi.com/provide/vod/from/jinyingyun/at/json",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1
