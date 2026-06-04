@@ -1,46 +1,10 @@
 {
   "sites": [
     {
-      "key": "魔都",
-      "name": "魔都",
-      "type": 1,
-      "api": "https://www.mdzyapi.com/api.php/provide/vod/?ac=list",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1
-    },
-    {
-      "key": "非凡",
-      "name": "非凡",
-      "type": 1,
-      "api": "http://api.ffzyapi.com/api.php/provide/vod/?ac=list",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1
-    },
-    {
       "key": "量子",
       "name": "量子",
-      "type": 1,
-      "api": "https://cj.lziapi.com/api.php/provide/vod/?ac=list",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1
-    },
-    {
-      "key": "金鹰",
-      "name": "金鹰",
-      "type": 1,
-      "api": "https://jyzyapi.com/provide/vod/from/jinyingyun/at/json",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1
-    },
-    {
-      "key": "快车",
-      "name": "快车",
-      "type": 1,
-      "api": "https://caiji.kuaichezy.org/api.php/provide/vod/?ac=list",
+      "type": 0,
+      "api": "https://cj.lziapi.com/api.php/provide/vod/from/liangzi/at/xml/",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1
