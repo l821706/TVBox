@@ -1,51 +1,56 @@
 {
-  "spider": "",
-  "wallpaper": "",
+  "urls": [
+    "https://tv.xn--yhqu5zs87a.top" // 推荐常规线路（含瓜子影视资源）
+  ],
+  "spider": "https://ghproxy.cc/https://raw.githubusercontent.com/FongMi/Crawler/main/spider.json", // 通用爬虫规则（支持瓜子影视站点解析）
   "sites": [
     {
-      "key": "guazi",
-      "name": "瓜子影视",
-      "type": 0,
-      "api": "https://gz360.tv/iduoduo/orange/-/raw/main/config.bin",
-      "searchable": 1,
-      "filterable": 1,
-      "ext": {
-        "playerType": 1,
-        "timeout": 30
-      }
+      "key": "csp_Guazi", // 站点唯一标识
+      "name": "瓜子影视", // 应用内显示名称
+      "type": "cors", // 请求类型（支持跨域）
+      "api": "csp_XBPQ", // 使用XBPQ解析规则（社区通用影视解析框架）
+      "searchable": 1, // 支持搜索
+      "quickSearch": 1, // 支持快速搜索
+      "filterable": 1, // 支持分类筛选
+      "ext": "https://ghproxy.cc/https://raw.githubusercontent.com/your-guazi-source/main/categories.json" // 瓜子影视分类配置（需替换为实际可访问的分类接口）
+    },
+    {
+      "key": "csp_Local",
+      "name": "本地资源",
+      "type": "local",
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 0
     }
   ],
   "parses": [
     {
-      "name": "通用解析",
-      "type": 0,
-      "url": "https://jx.aidouer.net/?url=",
-      "ext": {
-        "header": {
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-        }
-      }
+      "name": "聚合解析",
+      "type": 3, // 3表示聚合模式，自动调用所有可用解析
+      "url": "Demo"
+    },
+    {
+      "name": "瓜子专属解析",
+      "type": 1, // 1表示直接播放
+      "url": "https://jx.xmflv.com/?url" // 适配瓜子影视的解析接口（若失效可替换为其他稳定解析地址）
     },
     {
       "name": "备用解析",
-      "type": 0,
-      "url": "https://play.bfzyapi.com/?url="
+      "type": 1,
+      "url": "https://jx.yparse.com/?url" // 通用备用解析接口
     }
   ],
-  "lives": [],
-  "flags": [
+  "lives": [
     {
-      "id": 1,
-      "name": "电影"
-    },
-    {
-      "id": 2,
-      "name": "电视剧"
-    },
-    {
-      "id": 3,
-      "name": "动漫"
+      "name": "热门直播",
+      "type": 0,
+      "url": "https://ghproxy.cc/https://raw.githubusercontent.com/FongMi/live/main/live.txt", // 通用直播源（含央视、卫视、体育频道）
+      "epg": "https://epg.112114.xyz/?ch=", // 电子节目单（可选，支持显示节目时间表）
+      "logo": "https://live.fanmingming.com/tv/logo.png" // 频道图标（可选）
     }
+  ],
+  "flags": [
+    "qq", "iqiyi", "letv", "sohu", "bilibili", "youku", "mgtv", "tudou", "163", "guazi" // 视频平台标识（含瓜子影视自定义标识）
   ],
   "doh": [
     {
@@ -53,8 +58,16 @@
       "url": "https://dns.alidns.com/dns-query"
     },
     {
-      "name": "腾讯DNS",
-      "url": "https://doh.pub/dns-query"
+      "name": "谷歌DNS",
+      "url": "https://dns.google/dns-query"
     }
+  ],
+  "ads": [
+    "mimg.9cang.info", // 广告域名过滤
+    "www.googletagmanager.com",
+    "www.google-analytics.com",
+    "mc.usihnbcq.cn",
+    "k.jinshaui.com",
+    "www.jinshaui.com"
   ]
 }
