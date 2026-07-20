@@ -1,0 +1,60 @@
+{
+  "spider": "",
+  "wallpaper": "",
+  "sites": [
+    {
+      "key": "guazi",
+      "name": "瓜子影视",
+      "type": 0,
+      "api": "https://git.acwing.com/iduoduo/orange/-/raw/main/config.bin",
+      "searchable": 1,
+      "filterable": 1,
+      "ext": {
+        "playerType": 1,
+        "timeout": 30
+      }
+    }
+  ],
+  "parses": [
+    {
+      "name": "通用解析",
+      "type": 0,
+      "url": "https://jx.aidouer.net/?url=",
+      "ext": {
+        "header": {
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+        }
+      }
+    },
+    {
+      "name": "备用解析",
+      "type": 0,
+      "url": "https://play.bfzyapi.com/?url="
+    }
+  ],
+  "lives": [],
+  "flags": [
+    {
+      "id": 1,
+      "name": "电影"
+    },
+    {
+      "id": 2,
+      "name": "电视剧"
+    },
+    {
+      "id": 3,
+      "name": "动漫"
+    }
+  ],
+  "doh": [
+    {
+      "name": "阿里DNS",
+      "url": "https://dns.alidns.com/dns-query"
+    },
+    {
+      "name": "腾讯DNS",
+      "url": "https://doh.pub/dns-query"
+    }
+  ]
+}
