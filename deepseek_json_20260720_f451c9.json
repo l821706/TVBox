@@ -1,73 +1,58 @@
 {
-  "urls": [
-    "https://tv.xn--yhqu5zs87a.top" // 推荐常规线路（含瓜子影视资源）
-  ],
-  "spider": "https://ghproxy.cc/https://raw.githubusercontent.com/FongMi/Crawler/main/spider.json", // 通用爬虫规则（支持瓜子影视站点解析）
+  "spider": "https://gitee.com/gongpingdekongjian/tvbox/raw/main/jar/xBPQ.jar",
+  "wallpaper": "https://bing.img.run/uhd.php",
+  "warningText": "提示：长按主页可刷新；瓜子影视线路如不可用请切换其他源",
   "sites": [
     {
-      "key": "csp_Guazi", // 站点唯一标识
-      "name": "瓜子影视", // 应用内显示名称
-      "type": "cors", // 请求类型（支持跨域）
-      "api": "csp_XBPQ", // 使用XBPQ解析规则（社区通用影视解析框架）
-      "searchable": 1, // 支持搜索
-      "quickSearch": 1, // 支持快速搜索
-      "filterable": 1, // 支持分类筛选
-      "ext": "https://ghproxy.cc/https://raw.githubusercontent.com/your-guazi-source/main/categories.json" // 瓜子影视分类配置（需替换为实际可访问的分类接口）
-    },
-    {
-      "key": "csp_Local",
-      "name": "本地资源",
-      "type": "local",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 0
+      "key": "瓜子",
+      "name": "🍉 瓜子影视",
+      "type": 3,
+      "api": "csp_Gz360",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "changeable": 1,
+      "playerType": 2,
+      "timeout": 30
     }
   ],
   "parses": [
     {
-      "name": "聚合解析",
-      "type": 3, // 3表示聚合模式，自动调用所有可用解析
-      "url": "Demo"
-    },
-    {
-      "name": "瓜子专属解析",
-      "type": 1, // 1表示直接播放
-      "url": "https://jx.xmflv.com/?url" // 适配瓜子影视的解析接口（若失效可替换为其他稳定解析地址）
-    },
-    {
-      "name": "备用解析",
+      "name": "通用解析",
       "type": 1,
-      "url": "https://jx.yparse.com/?url" // 通用备用解析接口
+      "url": "https://jx.jsonapi.cc/api.php?url="
     }
   ],
   "lives": [
     {
-      "name": "热门直播",
-      "type": 0,
-      "url": "https://ghproxy.cc/https://raw.githubusercontent.com/FongMi/live/main/live.txt", // 通用直播源（含央视、卫视、体育频道）
-      "epg": "https://epg.112114.xyz/?ch=", // 电子节目单（可选，支持显示节目时间表）
-      "logo": "https://live.fanmingming.com/tv/logo.png" // 频道图标（可选）
+      "group": "redirect",
+      "channels": [
+        {
+          "name": "live",
+          "urls": [
+            "proxy://do=live&type=txt&ext=aHR0cHM6Ly90di41eWUuY2MvbGl2ZS9saXZlLnR4dA=="
+          ]
+        }
+      ]
     }
   ],
   "flags": [
-    "qq", "iqiyi", "letv", "sohu", "bilibili", "youku", "mgtv", "tudou", "163", "guazi" // 视频平台标识（含瓜子影视自定义标识）
+    "国产剧",
+    "美剧",
+    "韩剧",
+    "日剧",
+    "电影",
+    "综艺",
+    "动漫"
   ],
   "doh": [
     {
-      "name": "阿里DNS",
-      "url": "https://dns.alidns.com/dns-query"
-    },
-    {
-      "name": "谷歌DNS",
-      "url": "https://dns.google/dns-query"
+      "name": "Cloudflare",
+      "url": "https://cloudflare-dns.com/dns-query"
     }
   ],
   "ads": [
-    "mimg.9cang.info", // 广告域名过滤
-    "www.googletagmanager.com",
-    "www.google-analytics.com",
-    "mc.usihnbcq.cn",
-    "k.jinshaui.com",
-    "www.jinshaui.com"
+    "mimg.0c1q0l.cn",
+    "www.googletagmanager.com"
   ]
 }
